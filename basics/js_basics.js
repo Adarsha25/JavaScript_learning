@@ -73,6 +73,16 @@ console.log(arr1.concat(arr2))
 // let dc = [1,2,3,4,5,6]
 // console.log(dc.forEach())
 
+// Type of
+// Data type    Type of
+// string    -   string
+// Number    -   Number
+// Boolean   -   Boolean
+// Array     -   Object
+// Object    -   Object
+// Null      -   Object
+// Symbol    -   Symbol
+// undefined -   undefined
 
 
 // Null and Undefined
@@ -80,4 +90,129 @@ console.log(arr1.concat(arr2))
 let soso = null
 console.log(typeof soso)  // object
 
+// Sorting 
+// Bubble Sort
+function bubbleSort(arr){
+    for(let i = 0; i < arr.length; i++){
+        for(let j = 0; j < (arr.length-i-1); j++){
+            if (arr[j] > arr[j+1]){
+                var temp = arr[j]
+                arr[j] = arr[j+1]
+                arr[j+1] = temp
+            }
+        }
+    }
+   console.log(arr) 
+}
+ 
 
+var asc = [1,4,2,63,7,9]
+
+bubbleSort(asc)
+
+// Bubble sort in descending order
+function bubbSort(arr){
+    for(let i = 0; i < arr.length; i++){
+        for(let j = 0; j < (arr.length-i-1); j++){
+            if (arr[j] < arr[j+1]){
+                var temp = arr[j]
+                arr[j] = arr[j+1]
+                arr[j+1] = temp
+            }
+        }
+    }
+   console.log(arr) 
+}
+ 
+
+var asc = [1,4,2,63,7,9]
+
+bubbSort(asc)
+
+
+// Insertion Sort
+
+function insertionSort(ary){
+    for(let i = 1; i < ary.length; i++){
+        for(let j = i-1; j > -1; j--){
+            if(ary[j+1] < ary[j]){
+                [ary[j+1], ary[j]] = [ary[j], ary[j+1]]
+            }
+        }
+    }
+    return ary;
+}
+
+var temp = [2,3,1,5,8,6,4]
+
+console.log(insertionSort(temp))
+
+
+
+// Selection Sort
+function selectionSort(arr){
+    let min;
+
+    for(let i = 0; i < arr.length; i++){
+        min = i;
+
+        for (let j = i+1; j < arr.length; j++){
+            if(arr[j] < arr[min]){
+                min = j;
+            }
+        }
+        if(min !== i){
+            [arr[min],arr[i]] = [arr[i],arr[min]]
+        }
+    }
+    console.log(arr)
+}
+var ascend = [5,3,6,2,9,1]
+selectionSort(ascend)
+
+// remove duplicate from the array
+// using filter()
+let arra = [1,1,2,3,4,4,5,5]
+
+function removeduplicate(arr){
+    return arr.filter((item, index) => arr.indexOf(item) === index)
+}
+console.log(removeduplicate(arra))
+
+// using forEach() feature of ES6(ES2015)
+let newArr = [2,3,4,5,6,4,3,4,2,2,3,6,7]
+
+function removeDups(arr){
+    let unique = []
+    arr.forEach(element => {
+        if (!unique.includes(element)){
+            unique.push(element)
+        }
+    })
+    return unique
+}
+console.log(removeDups(newArr))
+
+// 
+let math = {
+    add : (a, b) => a+b,
+    sub : (a,b) => a-b,
+    mult : (a,b) => a*b,
+    div : (a,b) => a/b
+}
+
+let addition = math.add(1,2)
+console.log(addition)
+
+let subtraction = math.sub(1,2)
+console.log(subtraction)
+
+let multiply = math.mult(2,3)
+console.log(multiply)
+
+let divide = math.div(4,2)
+console.log(divide)
+
+
+let dsa = [1,2,3,4,5]
+console.log(dsa.pop())
